@@ -28,8 +28,7 @@ class SampleCrew:
         return Agent(
             config=self.agents_config['retrieve_suppliers'],
             tools=[SerperSearchTool()],
-            verbose=True,
-            allow_delegation=True,
+           
         )
 
     @agent
@@ -37,14 +36,14 @@ class SampleCrew:
         return Agent(
             config=self.agents_config['domain_researcher_agent'],
             tools=[CombinedTool(result_as_answer=True)],
-            verbose=True,
+       
         )
 
     @agent
     def ai_suppliers_writer(self) -> Agent:
         return Agent(
             config=self.agents_config['ai_suppliers_writer'],
-            verbose=True,
+          
         )
 
     @task
