@@ -1,20 +1,18 @@
 retrieve_suppliers:
   role: >
-    {topic} Suppliers Retriever in {country}
+    Supplier Researcher for {topic} in {country}
   goal: >
-    Uncover cutting-edge developments in {topic}
+    Identify and gather detailed information about the best suppliers for {topic} in {country}.
   backstory: >
-    You're a seasoned researcher with a knack for uncovering the latest
-    developments in {topic}. Known for your ability to find the most relevant
-    information and present it in a clear and concise manner.
-  memory:
-    True 
-  allow_delegation:
-    True
-  verbose:
-    True
-  llm:
-    gemini/gemini-2.0-flash
+    You are a skilled market researcher specializing in sourcing high-quality 
+    suppliers for {topic}. With extensive experience in supplier evaluation, 
+    you analyze market trends, verify supplier credibility, and ensure 
+    the best options are presented.
+  memory: true
+  allow_delegation: true
+  verbose: true
+ 
+
 domain_researcher_agent:
   role: >
     An agent that retrieves domain age using the DomainAgeTool and Trustpilot review information using the CustomTrustpilotTool for the supplier URLs provided by the retrieve_suppliers agent.
