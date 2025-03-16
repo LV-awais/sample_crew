@@ -71,10 +71,9 @@ class SampleCrew:
             agents=self.agents,  # Automatically created by the @agent decorator
             tasks=self.tasks,  # Automatically created by the @task decorator
             process=Process.sequential,
-            verbose=True,
             planning=True,
             planning_llm=LLM(
-                model="gemini/gemini-2.0-flash"
+                model="gemini/gemini-1.5-flash"
             )  # This line was incorrectly indented before
             # process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
         )
