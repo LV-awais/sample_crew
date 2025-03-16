@@ -1,7 +1,8 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from dotenv import load_dotenv
-from .tools.custom_tool import CombinedTool, SerperSearchTool
+from crewai_tools import SerperDevTool
+# from .tools.custom_tool import CombinedTool, SerperSearchTool
 from crewai import LLM  # Ensure this is imported if you’re using LLM
 
 load_dotenv()
@@ -27,7 +28,7 @@ class SampleCrew:
     def retrieve_suppliers(self) -> Agent:
         return Agent(
             config=self.agents_config['retrieve_suppliers'],
-            tools=[SerperSearchTool()],
+            tools=[SerperDevTool()],
            
         )
 
@@ -35,7 +36,7 @@ class SampleCrew:
     def domain_researcher_agent(self) -> Agent:
         return Agent(
             config=self.agents_config['domain_researcher_agent'],
-            tools=[CombinedTool(result_as_answer=True)],
+        
        
         )
 
